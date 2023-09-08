@@ -1,0 +1,102 @@
+# Sparse Sort
+
+Sparse Sort is a C sorting algorithm designed to efficiently sort lists of integers. It is especially effective for lists with a high degree of uniformity, where many values are repeated.
+
+## Features
+
+- Efficiently sorts lists of integers.
+- Well-suited for lists with a high degree of uniformity.
+- Provides a C library with a simple API.
+- Error handling for float input data.
+- Not an in-place sorting algorithm.
+
+## Usage
+
+### Installation
+
+To use the Sparse Sort library, follow these steps:
+
+1. Clone the repository or download the source code.
+
+```shell
+git clone https://github.com/cory.primm/sparse-sort.git
+cd sparse-sort
+
+Compile the library and create an executable. You can use the provided Makefile:
+shell
+Copy code
+make
+Use the library in your C programs by including the "sparseSort.h" header file and linking with the "sparseSort.c" source file.
+Example
+Here's an example of how to use the Sparse Sort library in your C program:
+
+c
+Copy code
+#include <stdio.h>
+#include <stdlib.h>
+#include "sparseSort.h"
+
+int main() {
+    int input_arr[] = {3, 1, 2, 2, 4, 3, 1};
+    int size = sizeof(input_arr) / sizeof(input_arr[0]);
+    int sorted_size;
+    
+    int* sorted_output = sparseSort(input_arr, size, &sorted_size);
+    
+    for (int i = 0; i < sorted_size; i++) {
+        printf("%d ", sorted_output[i]);
+    }
+    
+    free(sorted_output);
+    
+    return 0;
+}
+Performance
+Sparse Sort is particularly effective for lists of integers with a high degree of uniformity, where many values are repeated. It can outperform other sorting algorithms, like TimSort, for such datasets.
+
+However, when dealing with data that is less uniformly distributed, TimSort may be a more suitable choice due to its adaptive nature.
+
+Error Handling
+Sparse Sort includes error handling for float input data. If the input array contains floats, an error message is displayed, and the program exits with an error code.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Note: Sparse Sort is primarily designed for sorting integers and may not be suitable for sorting float data. Use it with integer data or consider converting floats to integers before sorting.
+
+To use with Python:
+(start your virtual environment)
+pip3 install setuptools
+python3 setup.py build_ext --inplace
+
+and then in your python file it can be used as: 
+`from sparse import sparsedSort`
+
+and used like:
+`newarr = sparsedSort(arr)`
+Again this was written for an array of integers- the code comically defaults to Python's timsort when it's something else :D
+
+
+.
+├── Readme
+├── __pycache__
+│   └── sparse.cpython-310.pyc
+├── build
+│   ├── lib.macosx-10.9-universal2-3.10
+│   │   └── sparseModule.cpython-310-darwin.so
+│   └── temp.macosx-10.9-universal2-3.10
+│       ├── sparseModule.o
+│       └── sparseSort.o
+├── pyproject.toml
+├── setup.py
+├── sparse.py
+├── sparseModule.c
+├── sparseModule.cpython-310-darwin.so
+├── sparseModule.h
+├── sparseSort.c
+├── sparseSort.h
+└── tests
+    ├── logicInPython.py
+    ├── multipleTests.py
+    └── sparseTest.py
+
