@@ -9,7 +9,7 @@
 // Helper function to check if an array contains floats
 bool containsFloats(int arr[], int size) {
     for (int i = 0; i < size; i++) {
-        if (arr[i] % 1 != 0) { // Check if the element is not an integer
+        if (arr[i] % 1 != 0) {
             return true;
         }
     }
