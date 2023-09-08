@@ -4,6 +4,7 @@ import numpy as np
 from scipy.stats import skew, kurtosis, norm, percentileofscore
 import secrets
 from ..sparse import sparsedSort
+#from logicInPython import sortFloatsByInteger, insertion_sort, customSort
 
 
 
@@ -79,9 +80,6 @@ def manyRuns(num_of_runs, score):
 
         thirdCopy = deep_copy_array[:]
         print("""
-
-
-
 
         """)
 
@@ -171,7 +169,4 @@ def compareTwoPerformance(arr1, arr2, score, runNumber):
     return score  
 
 manyRuns(3, score)
-
-# Example usage:
-# data = np.random.normal(0, 1, 1000)  # Replace with your dataset
 
