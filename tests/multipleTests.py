@@ -3,7 +3,7 @@ import time
 import numpy as np
 from scipy.stats import skew, kurtosis, norm, percentileofscore
 import secrets
-from sparse import sparsedSort
+from ..sparse import sparsedSort
 
 
 

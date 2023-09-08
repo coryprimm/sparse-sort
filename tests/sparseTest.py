@@ -1,5 +1,5 @@
 #import sparseModule
-from sparse import sparsedSort
+from ..sparse import sparsedSort
 import time
 import random
 
