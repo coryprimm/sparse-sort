@@ -40,7 +40,7 @@ static PyObject* sparse_sort(PyObject* self, PyObject* args) {
     int sorted_size;
     int* sorted_output = sparseSort(input_arr, size, &sorted_size);
 
-    // Convert the result back to a Python list
+    // Convert the result back to a Python list!
     PyObject* sorted_list = PyList_New(sorted_size);
     if (sorted_list == NULL) {
         PyErr_SetString(PyExc_RuntimeError, "Failed to create a new list.");

@@ -81,12 +81,6 @@ Again this was written for an array of integers- the code comically defaults to 
 ├── Readme
 ├── __pycache__
 │   └── sparse.cpython-310.pyc
-├── build
-│   ├── lib.macosx-10.9-universal2-3.10
-│   │   └── sparseModule.cpython-310-darwin.so
-│   └── temp.macosx-10.9-universal2-3.10
-│       ├── sparseModule.o
-│       └── sparseSort.o
 ├── pyproject.toml
 ├── setup.py
 ├── sparse.py
